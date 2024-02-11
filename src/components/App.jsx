@@ -11,19 +11,21 @@ function App() {
       <Avatar
         img="https://www.southparkshop.com/cdn/shop/products/SP-Cartman-Stand-40_800x.jpg?v=1618604102"
       />
-        {
-            contacts.map(contact =>
-                <Card
-                    name = {contact.name}
-                    img = {contact.imgURL}
-                    tel = {contact.phone}
-                    email = {contact.email}
-                />    
-            )
-        }
-       
+    {contacts.map(createCard)}
+
     </div>
   );
+}
+
+function createCard(contact){
+  return <Card
+    id={contact.id}
+    key={contact.id}
+    name={contact.name}
+    img={contact.imgURL}
+    tel={contact.phone}
+    email={contact.email}
+  />
 }
 
 export default App;
